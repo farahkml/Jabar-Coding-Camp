@@ -2,20 +2,42 @@
 var pertama = "saya sangat senang hari ini";
 var kedua = "belajar javascript itu keren";
 
-var pertama = "saya senang ";
-var kedua = "belajar JAVASCRIPT";
-console.log(pertama.concat(kedua)); 
+// jawaban soal 1
+
+
+var kataPertama = pertama.substring(0,4) + " "; 
+var kataKedua = pertama.substring(12,18) + " ";
+var kataKetiga = kedua.substring(0,7) + " ";
+var kataKeempat = kedua.substring(8,18) + " "; 
+var upper = kataKeempat.toUpperCase(); 
+
+console.log(kataPertama+kataKedua+kataKetiga+upper);
+
+ 
+
+
 
 // soal 2
-var number1 = "10";
-var number2 = "2";
-var number3 = "4";
-var number4 = "6";
+var kataPertama = "10";
+var kataKedua = "2";
+var kataKetiga = "4";
+var kataKeempat = "6";
 
-console.log(number1 % number2 + number3 * number4);
+// jawaban soal 2
+var intPertama = parseInt(kataPertama);
+var intKedua = parseInt(kataKedua);
+var intKetiga = parseInt(kataKetiga);
+var intKeempat = parseInt(kataKeempat);
+
+var hasil = intPertama + (intKedua * intKetiga) + intKeempat
+
+console.log(hasil)
+
 
 // soal 3
 var kalimat = 'wah javascript itu keren sekali'; 
+
+// jawaban soal 3
 
 var kataPertama = kalimat.substring(0,3); 
 var kataKedua = kalimat.substring(4,14);
@@ -28,3 +50,4 @@ console.log(kataKedua);
 console.log(kataKetiga); 
 console.log(kataKeempat); 
 console.log(kataKelima);
+
