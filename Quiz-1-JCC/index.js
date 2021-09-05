@@ -25,3 +25,28 @@ var hasilJudulDua = tanggalBesok(tanggal, bulan, tahun);
 
 console.log(hasilJudulDua +  '\n');
 
+//Judul 2 : Function Penghitung Jumlah Kata
+
+//Buatlah sebuah function dengan nama jumlah_kata() yang menerima sebuah kalimat (string), dan mengembalikan nilai jumlah kata dalam kalimat tersebut.
+//Contoh
+//var kalimat_1 = " Halo nama saya Muhammad Iqbal Mubarok "
+//var kalimat_2 = "Saya Iqbal"
+//jumlah_kata(kalimat_1) // 6
+//jumlah_kata(kalimat_2) // 2
+
+//Jawaban Judul 2
+
+function jumlahKata(string) {
+    var pemisah = string.split(' ').filter((kata) => {if (kata !== ' ')
+    return kata;
+    })
+     return pemisah.length;
+}
+    
+var kalimat_1 = "Hallo nama saya Farah Kamila"
+var kalimat_2 = "Saya Farah"
+var hasil_1 = jumlahKata(kalimat_1)
+var hasil_2 = jumlahKata(kalimat_2)
+    
+console.log(kalimat_1 + '= ' + hasil_1 + '\n')
+console.log(kalimat_2 + '= ' + hasil_2 + '\n')
