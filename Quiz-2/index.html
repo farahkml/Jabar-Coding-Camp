@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz-2-Farah Kamila</title>
+  </head>
+  <body>
+    <div id="app" class="container">
+      <h1>Hobby List:</h1>
+
+      <div v-if="!isEditing">
+        <input placeholder="List of Hobbies" type="text" v-model="todo" />
+        <input type="submit" value="Add" @click="storeTodo" />
+      </div>
+      <div v-else>
+        <input placeholder="List of Hobbies" type="text" v-model="todo" />
+        <input type="submit" value="Update" @click="updateTodo" />
+      </div>
+
+      <ul>
+        <li v-for="(todo, index) in todos">
+          {{ todo }}
+          <button @click="editTodo(index, todo)">Edit</button>
+          <span> | </span>
+          <button @click="removeTodo(index)">Delete</button>
+        </li>
+        
+      </ul>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script>
+      var vm = new Vue({
+        el: "#app",
+
+        data: {
+          isEditing: false,
+          todo: "",
+          todos: ["Eating", "Cooking", "Travelling", "Sleeping"],
+          selectedTodo: null,
+        },
+
+        methods: {
+          storeTodo() {
+            this.todos.push(this.todo);
+            this.todo = "";
+          },
+
+          removeTodo(index) {
+            this.index = confirm("Are you sure you want to delete this?");
+            if (this.index == true) {
+              this.todos.splice(index, 1);
+            } else {
+              alert("It's danger");
+            }
+          },
+
+          updateTodo() {
+            this.todos.splice(this.selectedIndex, 1, this.todo);
+            this.todo = "";
+            this.isEditing = false;
+          },
+
+          editTodo(index, todo) {
+            this.isEditing = true;
+            this.todo = todo;
+            this.selectedIndex = index;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
